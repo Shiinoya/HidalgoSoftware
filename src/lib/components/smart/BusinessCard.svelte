@@ -9,51 +9,61 @@
 Component to display contact information and an image.
 -->
 
-<Card>
-  <div class="business-card-content">
-    <img src="headshot.jpg" alt="my face" />
+<div class="business-card-wrapper">
+  <Card>
+    <div class="business-card-content">
+      <img src="headshot.jpg" alt="my face" />
 
-    <div class="contact-information">
-      <h2>Moises Hidalgo</h2>
-      <h4>Software Engineer</h4>
-      <p>contact-card@hidalgosoftware.com</p>
-      <p>(619) 357 0321</p>
+      <div class="contact-information">
+        <h2>Moises Hidalgo</h2>
+        <h4>Software Engineer</h4>
+        <p>contact-card@hidalgosoftware.com</p>
+        <p>(619) 357 0321</p>
+      </div>
     </div>
-  </div>
-</Card>
+  </Card>
+</div>
 
 <style lang="scss">
-  div.business-card-content {
-    height: 250px;
-    width: 450px;
+  div.business-card-wrapper {
+    div.business-card-content {
+      max-height: 250px;
+      max-width: 450px;
 
-    display: grid;
-    grid-template-columns: 35% auto;
-    align-items: center;
-    overflow: hidden;
+      display: grid;
+      grid-template-columns: 35% auto;
+      align-items: center;
+      overflow: hidden;
 
-    color: var(--text-color-dark);
+      color: var(--text-color-dark);
 
-    img {
-      width: 100%;
-      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      img {
+        width: 100%;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      }
+
+      div.contact-information {
+        text-align: right;
+
+        h2 {
+          margin-bottom: 0.5em;
+        }
+
+        h4 {
+          margin-top: 0.5em;
+          margin-bottom: 0;
+        }
+
+        p {
+          margin: 0.8em 0;
+        }
+      }
     }
+  }
 
-    div.contact-information {
-      text-align: right;
-
-      h2 {
-        margin-bottom: 0.5em;
-      }
-
-      h4 {
-        margin-top: 0.5em;
-        margin-bottom: 0;
-      }
-
-      p {
-        margin: 0.8em 0;
-      }
+  @media (max-width: 470px) {
+    div.business-card-wrapper {
+      transform: rotate(90deg);
     }
   }
 </style>
