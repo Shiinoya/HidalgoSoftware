@@ -7,6 +7,9 @@
   --charcoal-900: #1C1C1C;
   --charcoal-800: #2B2B2B;
 
+  --white-900: #ffffff;
+
+  --text-color: var(--white-900);
   --background-color: var(--charcoal-900);
 }
 
@@ -20,6 +23,7 @@ html {
   min-height: 100%;
   box-sizing: border-box;
 
+  color: var(--text-color);
   background-color: var(--background-color);
 }
 

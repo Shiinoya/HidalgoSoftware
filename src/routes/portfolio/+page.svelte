@@ -13,8 +13,8 @@ feature_description
 - prop_name: prop_description
 -->
 
-<title></title>
+<title>Hidalgo : Portfolio</title>
 
-<div></div>
+<div>potatoes</div>
 
 <style lang="scss"></style>
