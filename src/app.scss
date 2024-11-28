@@ -1,15 +1,16 @@
 * {
   font-family: 'Noto Sans', Helvetica, sans-serif;
-  line-height: 1.5rem;
+  line-height: 0.8em;
 
   --black-900: #000000;
 
-  --charcoal-900: #1C1C1C;
-  --charcoal-800: #2B2B2B;
+  --charcoal-900: #1c1c1c;
+  --charcoal-800: #2b2b2b;
 
   --white-900: #ffffff;
 
-  --text-color: var(--white-900);
+  --text-color-light: var(--white-900);
+  --text-color-dark: var(--charcoal-900);
   --background-color: var(--charcoal-900);
 }
 
@@ -23,7 +24,7 @@ html {
   min-height: 100%;
   box-sizing: border-box;
 
-  color: var(--text-color);
+  color: var(--text-color-light);
   background-color: var(--background-color);
 }
 
@@ -36,4 +37,11 @@ body {
   flex-direction: column;
 
   overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'M Plus 1', sans-serif;
 }

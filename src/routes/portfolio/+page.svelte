@@ -1,20 +1,22 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import BusinessCard from '$lib/components/smart/BusinessCard.svelte';
+</script>
 
-<!--
-@component
+<title>Moises Hidalgo : Portfolio</title>
 
-## component_name
-component_description
+<div class="view-wrapper">
+  <BusinessCard />
+</div>
 
-### Features
-feature_description
+<style lang="scss">
+   .view-wrapper {
+    position: absolute;
+    inset: 0;
 
-### Props
-- prop_name: prop_description
--->
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-<title>Hidalgo : Portfolio</title>
-
-<div>potatoes</div>
-
-<style lang="scss"></style>
+    margin: auto;
+  }
+</style>
