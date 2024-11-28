@@ -60,10 +60,4 @@ Component to display contact information and an image.
       }
     }
   }
-
-  @media (max-width: 470px) {
-    div.business-card-wrapper {
-      transform: rotate(90deg);
-    }
-  }
 </style>
