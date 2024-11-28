@@ -5,23 +5,21 @@
 <title>Moises Hidalgo : Portfolio</title>
 
 <div class="view-wrapper">
-	<h1>Moises Hidalgo</h1>
-
-	<span class="business-card-wrapper">
+	<div class="business-card-wrapper">
 		<BusinessCard />
-	</span>
+	</div>
 </div>
 
 <style lang="scss">
 	.view-wrapper {
-		text-align: center;
+		div.business-card-wrapper {
+      max-height: fit-content;
+      max-width: fit-content;
 
-		display: flex;
-		flex-direction: column;
-    align-items: center;
+			position: absolute;
+      inset: 0;
 
-    span.business-card-wrapper {
-      margin-top: 10rem;
-    }
+      margin: auto;
+		}
 	}
 </style>
