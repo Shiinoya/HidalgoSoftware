@@ -35,7 +35,7 @@ feature_description
 
     display: grid;
     grid-template-columns: 40% auto;
-    grid-template-rows:max-content;
+    grid-template-rows: max-content;
     align-items: center;
     overflow: hidden;
 

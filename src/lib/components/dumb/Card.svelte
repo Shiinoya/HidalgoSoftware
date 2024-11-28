@@ -14,20 +14,20 @@ feature_description
 -->
 
 <div class="card-component">
-	<div class="card-content">
-		<slot />
-	</div>
+  <div class="card-content">
+    <slot />
+  </div>
 </div>
 
 <style lang="scss">
-	div.card-component {
-		height: 250px;
-		width: 450px;
+  div.card-component {
+    height: 250px;
+    width: 450px;
 
-		margin: 1rem;
+    margin: 1rem;
 
-		border-radius: 10px;
-		background-color: var(--white-900);
+    border-radius: 10px;
+    background-color: var(--white-900);
 
     div.card-content {
       width: 100%;
@@ -35,5 +35,5 @@ feature_description
 
       padding: 1rem;
     }
-	}
+  }
 </style>
