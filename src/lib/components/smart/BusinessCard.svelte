@@ -26,10 +26,10 @@ Component to display contact information and an image.
 
 <style lang="scss">
   div.business-card-wrapper {
-    div.business-card-content {
-      max-height: 250px;
-      max-width: 450px;
+    max-height: 300px;
+    max-width: 500px;
 
+    div.business-card-content {
       display: grid;
       grid-template-columns: 35% auto;
       align-items: center;
