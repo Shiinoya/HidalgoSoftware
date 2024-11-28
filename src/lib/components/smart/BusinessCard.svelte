@@ -45,12 +45,7 @@ Component to display contact information and an image.
       div.contact-information {
         text-align: right;
 
-        h2 {
-          margin-bottom: 0.5em;
-        }
-
         h4 {
-          margin-top: 0.5em;
           margin-bottom: 0;
         }
 
