@@ -17,6 +17,8 @@ feature_description
 
 <title></title>
 
-<div></div>
+<div>
+  <slot />
+</div>
 
 <style lang="scss"></style>
