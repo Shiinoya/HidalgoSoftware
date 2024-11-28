@@ -4,13 +4,7 @@
 @component
 
 ## Card
-Card wrapper component.
-
-### Features
-feature_description
-
-### Props
-- prop_name: prop_description
+Card wrapper component to use for consistent styling.
 -->
 
 <div class="card-component">
@@ -21,9 +15,6 @@ feature_description
 
 <style lang="scss">
   div.card-component {
-    height: 250px;
-    width: 450px;
-
     margin: 1rem;
 
     border-radius: 10px;

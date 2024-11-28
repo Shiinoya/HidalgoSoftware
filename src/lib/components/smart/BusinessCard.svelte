@@ -5,14 +5,8 @@
 <!--
 @component
 
-## component_name
-component_description
-
-### Features
-feature_description
-
-### Props
-- prop_name: prop_description
+## Business Card
+Component to display contact information and an image.
 -->
 
 <Card>
@@ -30,8 +24,8 @@ feature_description
 
 <style lang="scss">
   div.business-card-content {
-    width: 100%;
-    height: 100%;
+    height: 250px;
+    width: 450px;
 
     display: grid;
     grid-template-columns: 40% auto;
