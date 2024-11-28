@@ -17,9 +17,7 @@ feature_description
 
 <Card>
   <div class="business-card-content">
-    <div class="photo">
-      <img src="headshot_cropped.jpg" alt="my face" />
-    </div>
+    <img src="headshot.jpg" alt="my face" />
 
     <div class="contact-information">
       <h2>Moises Hidalgo</h2>
@@ -36,15 +34,16 @@ feature_description
     height: 100%;
 
     display: grid;
-    grid-template-columns: 35% auto;
+    grid-template-columns: 40% auto;
+    grid-template-rows:max-content;
     align-items: center;
+    overflow: hidden;
 
     color: var(--text-color-dark);
 
-    div.photo {
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     }
 
     div.contact-information {

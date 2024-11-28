@@ -32,8 +32,8 @@ feature_description
     div.card-content {
       width: 100%;
       height: 100%;
-      
-      padding: 0.5rem 1rem;
+
+      padding: 1rem;
     }
 	}
 </style>
