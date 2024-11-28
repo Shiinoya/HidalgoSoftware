@@ -18,7 +18,7 @@ feature_description
 <Card>
   <div class="business-card-content">
     <div class="photo">
-      <img src="headshot_cropped.jpg" alt="a face" />
+      <img src="headshot_cropped.jpg" alt="my face" />
     </div>
 
     <div class="contact-information">
@@ -27,8 +27,8 @@ feature_description
       <p>contact@hidalgosoftware.com</p>
       <p>(619) 357 0321</p>
     </div>
-  </div></Card
->
+  </div>
+</Card>
 
 <style lang="scss">
   div.business-card-content {
@@ -36,7 +36,7 @@ feature_description
     height: 100%;
 
     display: grid;
-    grid-template-columns: 33% auto;
+    grid-template-columns: 35% auto;
     align-items: center;
 
     color: var(--text-color-dark);
