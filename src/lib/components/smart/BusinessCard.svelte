@@ -16,7 +16,7 @@ Component to display contact information and an image.
     <div class="contact-information">
       <h2>Moises Hidalgo</h2>
       <h4>Software Engineer</h4>
-      <p>contact@hidalgosoftware.com</p>
+      <p>contact-card@hidalgosoftware.com</p>
       <p>(619) 357 0321</p>
     </div>
   </div>
@@ -28,8 +28,7 @@ Component to display contact information and an image.
     width: 450px;
 
     display: grid;
-    grid-template-columns: 40% auto;
-    grid-template-rows: max-content;
+    grid-template-columns: 35% auto;
     align-items: center;
     overflow: hidden;
 
