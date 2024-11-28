@@ -30,6 +30,9 @@ feature_description
 		background-color: var(--white-900);
 
     div.card-content {
+      width: 100%;
+      height: 100%;
+      
       padding: 0.5rem 1rem;
     }
 	}
