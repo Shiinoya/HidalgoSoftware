@@ -10,13 +10,8 @@
 
 <style lang="scss">
   .view-wrapper {
-    position: absolute;
-    inset: 0;
+    // margin: 0 auto;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: auto;
+    align-content: center;
   }
 </style>
