@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 * {
   font-family: 'Noto Sans', Helvetica, sans-serif;
   line-height: 0.8em;
@@ -9,9 +13,8 @@
 
   --white-900: #ffffff;
 
-  --text-color-light: var(--white-900);
-  --text-color-dark: var(--charcoal-900);
-  --background-color: var(--charcoal-900);
+  --text-color: light-dark(var(--white-900), var(--charcoal-900));
+  --background-color: light-dark(var(--charcoal-900), var(--black-900));
 }
 
 *,
@@ -24,7 +27,7 @@ html {
   min-height: 100%;
   box-sizing: border-box;
 
-  color: var(--text-color-light);
+  color: var(--text-color);
   background-color: var(--background-color);
 }
 
