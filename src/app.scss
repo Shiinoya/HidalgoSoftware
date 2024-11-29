@@ -2,6 +2,14 @@
   color-scheme: light dark;
 }
 
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 * {
   font-family: 'Noto Sans', Helvetica, sans-serif;
   line-height: 0.8em;
