@@ -9,7 +9,7 @@
 </div>
 
 <style lang="scss">
-   .view-wrapper {
+  .view-wrapper {
     position: absolute;
     inset: 0;
 
