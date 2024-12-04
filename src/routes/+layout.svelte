@@ -17,9 +17,6 @@
 <style lang="scss">
   div.layout-wrapper {
     height: 100vh;
-
     display: grid;
-    flex-direction: 33% auto;
-    justify-content: center;
   }
 </style>
