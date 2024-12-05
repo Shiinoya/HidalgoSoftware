@@ -1,7 +1,11 @@
 <script lang="ts">
+  import { setTheme } from '$lib/utils/color-scheme';
+  
   import Navbar from '$lib/components/smart/Navbar.svelte';
-
+  //
   import '../app.scss';
+
+  setTheme();
 </script>
 
 <div class="layout-wrapper">
