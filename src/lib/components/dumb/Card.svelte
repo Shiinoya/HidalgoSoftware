@@ -18,7 +18,7 @@ Card wrapper component to use for consistent styling.
     margin: 1rem;
 
     border-radius: 10px;
-    background-color: var(--white-900);
+    background-color: light-dark(var(--white-900), var(--charcoal-900));
 
     div.card-content {
       width: 100%;
