@@ -1,25 +1,49 @@
+import { browser } from '$app/environment';
 import { handleLocalStorage } from './localStorage.svelte';
 
-// TODO -- simplify this
-export const changeTheme = (): void => {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const userPrefersDarkMode = (): boolean | void => {
+  if (browser) {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+};
+
+const setThemeAttribute = (theme: string): void => {
+  if (browser) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+};
+
+export const setTheme = (): void => {
   const currentTheme = handleLocalStorage('theme');
 
-  if (currentTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    handleLocalStorage('theme', 'dark');
+  if (currentTheme) {
+    setThemeAttribute(currentTheme);
+  }
+
+  if (!currentTheme) {
+    if (userPrefersDarkMode()) {
+      setThemeAttribute('dark');
+    } else {
+      setThemeAttribute('light');
+    }
+  }
+};
+
+export const changeTheme = (): void => {
+  const currentTheme = handleLocalStorage('theme');
+
+  if (!currentTheme) {
+    setThemeAttribute(userPrefersDarkMode() ? 'dark' : 'light');
+    handleLocalStorage('theme', userPrefersDarkMode() ? 'dark' : 'light');
   }
 
   if (currentTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'light');
+    setThemeAttribute('light');
     handleLocalStorage('theme', 'light');
   }
 
-  if (prefersDark && !currentTheme) {
-    document.documentElement.setAttribute('data-theme', 'light');
-    handleLocalStorage('theme', 'light');
-  } else if (!prefersDark && !currentTheme) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  if (currentTheme === 'light') {
+    setThemeAttribute('dark');
     handleLocalStorage('theme', 'dark');
   }
 };

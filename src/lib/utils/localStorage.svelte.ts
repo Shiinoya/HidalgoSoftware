@@ -1,17 +1,21 @@
 import { browser } from '$app/environment';
 
-export const handleLocalStorage = (key: string, value?: string): string => {
+export const handleLocalStorage = (key: string, value?: string): string | void => {
   let storedItem = value;
 
   if (browser) {
-    const item = localStorage.getItem(key);
+    // if value is provided, add it to key
+    if (value) {
+      localStorage.setItem(key, JSON.stringify(value));
 
-    if (item) storedItem = JSON.parse(item);
+      return;
+    } else {
+      // if no value is provided, then get it with key
+      const storedValue = localStorage.getItem(key);
+
+      if (storedValue) storedItem = JSON.parse(storedValue);
+
+      return storedItem;
+    }
   }
-
-  if (value) {
-    localStorage.setItem(key, JSON.stringify(value));
-  }
-
-  return storedItem;
 };
