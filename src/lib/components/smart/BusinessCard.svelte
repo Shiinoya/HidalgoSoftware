@@ -17,7 +17,7 @@ Component to display contact information and an image.
       <div class="contact-information">
         <h2>Moises Hidalgo</h2>
         <h4>Software Engineer</h4>
-        <p>contact-card@hidalgosoftware.com</p>
+        <p>contact-card<br />@hidalgosoftware.com</p>
         <p>(619) 357 0321</p>
       </div>
     </div>
@@ -27,7 +27,7 @@ Component to display contact information and an image.
 <style lang="scss">
   div.business-card-wrapper {
     max-height: 300px;
-    max-width: 500px;
+    max-width: 450px;
 
     div.business-card-content {
       display: grid;
@@ -50,7 +50,7 @@ Component to display contact information and an image.
         }
 
         p {
-          margin: 0.8em 0;
+          margin: 1em 0;
         }
       }
     }
