@@ -35,7 +35,7 @@ Component to display contact information and an image.
       align-items: center;
       overflow: hidden;
 
-      color: var(--text-color-dark);
+      color: light-dark(var(--charcoal-900), var(--white-900));
 
       img {
         width: 100%;

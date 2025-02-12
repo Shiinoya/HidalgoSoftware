@@ -5,18 +5,16 @@
 <title>Moises Hidalgo : Portfolio</title>
 
 <div class="view-wrapper">
-  <BusinessCard />
+  <span class="business-card">
+    <BusinessCard />
+  </span>
 </div>
 
 <style lang="scss">
-   .view-wrapper {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: auto;
+  div.view-wrapper {
+    span.business-card {
+      display: flex;
+      justify-content: center;
+    }
   }
 </style>
