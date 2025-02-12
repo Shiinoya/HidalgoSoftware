@@ -14,8 +14,8 @@
 
     <div class="links">
       <ul>
-        <li>Websites</li>
-        <li>Web Applications</li>
+        <li><a href="/portfolio/web-applications">Web Applications</a></li>
+        <li><a href="/portfolio/websites">Websites</a></li>
       </ul>
     </div>
   </div>
