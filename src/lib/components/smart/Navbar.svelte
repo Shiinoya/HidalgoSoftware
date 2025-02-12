@@ -39,7 +39,7 @@ feature_description
     display: flex;
     justify-content: flex-end;
 
-    background-color: rgba(250, 179, 46, 0.9);
+    background-color: var(--orange-900);
 
     button {
       padding: 0.5rem;
