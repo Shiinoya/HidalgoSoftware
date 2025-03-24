@@ -1,7 +1,16 @@
 <script lang="ts">
-  const webApps = [
+  type WebApp = {
+    name: string;
+    type: string;
+  };
+
+  const webApps: WebApp[] = [
     {
       name: 'ActivForce',
+      type: 'Dashboard'
+    },
+    {
+      name: 'ActivElite',
       type: 'Dashboard'
     }
   ];
