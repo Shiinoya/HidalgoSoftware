@@ -2,16 +2,24 @@
   type WebApp = {
     name: string;
     type: string;
+    company: string;
   };
 
   const webApps: WebApp[] = [
     {
       name: 'ActivForce',
-      type: 'Dashboard'
+      type: 'Dashboard',
+      company: 'ActivBody'
     },
     {
       name: 'ActivElite',
-      type: 'Dashboard'
+      type: 'Dashboard',
+      company: 'ActivBody'
+    },
+    {
+      name: 'Account Management',
+      type: 'UI Portal',
+      company: 'ActivBody'
     }
   ];
 </script>
@@ -25,6 +33,7 @@
     {#each webApps as webApp}
       <li>Name: {webApp.name}</li>
       <li>Type: {webApp.type}</li>
+      <li>Company: {webApp.company}</li>
     {/each}
   </ul>
 </div>
