@@ -23,6 +23,9 @@
 
 <style lang="scss">
   div.view-wrapper {
+    display: flex;
+    flex-direction: column;
+
     span.business-card {
       display: flex;
       justify-content: center;

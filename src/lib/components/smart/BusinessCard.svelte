@@ -15,9 +15,9 @@ Component to display contact information and an image.
       <img src="headshot.jpg" alt="my face" />
 
       <div class="contact-information">
-        <h2>Moises Hidalgo</h2>
-        <h4>Software Engineer</h4>
-        <p>contact-card<br />@hidalgosoftware.com</p>
+        <h1>Moises Hidalgo</h1>
+        <h3>Software Engineer | Web Developer</h3>
+        <p>contact-card@hidalgosoftware.com</p>
         <p>(619) 357 0321</p>
       </div>
     </div>
@@ -26,24 +26,25 @@ Component to display contact information and an image.
 
 <style lang="scss">
   div.business-card-wrapper {
-    max-height: 300px;
     max-width: 450px;
 
     div.business-card-content {
-      display: grid;
-      grid-template-columns: 35% auto;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      overflow: hidden;
+
+      padding: 0.5em;
 
       color: light-dark(var(--charcoal-900), var(--white-900));
 
       img {
-        width: 100%;
-        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        width: 50%;
+        clip-path: circle();
+        // TODO : adjust positioning of photo
       }
 
       div.contact-information {
-        text-align: right;
+        text-align: center;
 
         h4 {
           margin-bottom: 0;
@@ -51,6 +52,8 @@ Component to display contact information and an image.
 
         p {
           margin: 1em 0;
+
+          font-weight: bold;
         }
       }
     }
