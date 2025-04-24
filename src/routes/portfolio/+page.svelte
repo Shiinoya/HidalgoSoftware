@@ -1,5 +1,6 @@
 <script lang="ts">
   import BusinessCard from '$lib/components/smart/BusinessCard.svelte';
+  import WebAppsCard from '$lib/components/smart/WebAppsCard.svelte';
 </script>
 
 <title>Moises Hidalgo : Portfolio</title>
@@ -15,6 +16,7 @@
     <div class="links">
       <ul>
         <li><a href="/portfolio/web-applications">Web Applications</a></li>
+        <WebAppsCard />
         <li><a href="/portfolio/websites">Websites</a></li>
       </ul>
     </div>
