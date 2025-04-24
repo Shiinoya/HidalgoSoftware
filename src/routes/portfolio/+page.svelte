@@ -13,13 +13,7 @@
   <div class="portfolio">
     <h1>Portfolio</h1>
 
-    <div class="links">
-      <ul>
-        <li><a href="/portfolio/web-applications">Web Applications</a></li>
-        <WebAppsCard />
-        <li><a href="/portfolio/websites">Websites</a></li>
-      </ul>
-    </div>
+    <WebAppsCard />
   </div>
 </div>
 
@@ -41,17 +35,6 @@
       align-items: center;
 
       text-align: center;
-
-      ul {
-        padding: 0;
-        font-size: 1.2rem;
-        font-weight: bold;
-
-        li {
-          padding: 0.5em;
-          list-style: none;
-        }
-      }
     }
   }
 </style>
