@@ -21,7 +21,9 @@
 
   --white-900: #ffffff;
 
-  --text-color: light-dark(var(--white-900), var(--charcoal-900));
+  --orange-900: #ff6f00;
+
+  --text-color: light-dark(var(--white-900), var(--white-900));
   --background-color: light-dark(var(--charcoal-900), var(--black-900));
 }
 
@@ -55,4 +57,26 @@ h2,
 h3,
 h4 {
   font-family: 'M Plus 1', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+
+  cursor: pointer;
+
+  color: var(--text-color);
+}
+
+a:visited {
+  color: var(--text-color);
+}
+
+a:active {
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--orange-900);
+  text-decoration: underline;
 }
