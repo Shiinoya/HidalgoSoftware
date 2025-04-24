@@ -10,7 +10,7 @@
   </span>
 
   <div class="portfolio">
-    <h2>Portfolio</h2>
+    <h1>Portfolio</h1>
 
     <div class="links">
       <ul>
@@ -32,7 +32,7 @@
     }
 
     div.portfolio {
-      margin-top: 8rem;
+      margin-top: 5rem;
 
       display: flex;
       flex-direction: column;
@@ -42,7 +42,7 @@
 
       ul {
         padding: 0;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: bold;
 
         li {
