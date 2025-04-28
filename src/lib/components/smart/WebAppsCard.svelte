@@ -37,6 +37,7 @@ feature_description
 <div class="web-apps-card-wrapper">
   <h2>Web Applications</h2>
 
+  <!-- // TODO : create grid for layout to include images -->
   <ul>
     {#each webApps as webApp}
       <li>Name: {webApp.name}</li>
