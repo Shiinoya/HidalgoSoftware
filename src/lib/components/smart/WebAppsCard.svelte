@@ -27,14 +27,11 @@
 <!--
 @component
 
-## component_name
-component_description
+## Web Applications Card
+Shows a list of web applications.
 
 ### Features
 feature_description
-
-### Props
-- prop_name: prop_description
 -->
 
 <div class="web-apps-card-wrapper">
@@ -45,6 +42,8 @@ feature_description
       <li>Name: {webApp.name}</li>
       <li>Type: {webApp.type}</li>
       <li>Company: {webApp.company}</li>
+      <br />
+      <br />
     {/each}
   </ul>
 </div>
@@ -63,6 +62,8 @@ feature_description
       li {
         padding: 0.5em;
         list-style: none;
+
+        text-align: left;
       }
     }
   }
