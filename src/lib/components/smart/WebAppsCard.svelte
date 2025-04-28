@@ -24,22 +24,33 @@
   ];
 </script>
 
-<title>Hidalgo : Web Applications</title>
+<!--
+@component
 
-<div class="view-wrapper">
+## Web Applications Card
+Shows a list of web applications.
+
+### Features
+feature_description
+-->
+
+<div class="web-apps-card-wrapper">
   <h2>Web Applications</h2>
 
+  <!-- // TODO : create grid for layout to include images -->
   <ul>
     {#each webApps as webApp}
       <li>Name: {webApp.name}</li>
       <li>Type: {webApp.type}</li>
       <li>Company: {webApp.company}</li>
+      <br />
+      <br />
     {/each}
   </ul>
 </div>
 
 <style lang="scss">
-  div.view-wrapper {
+  div.web-apps-card-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +63,8 @@
       li {
         padding: 0.5em;
         list-style: none;
+
+        text-align: left;
       }
     }
   }
