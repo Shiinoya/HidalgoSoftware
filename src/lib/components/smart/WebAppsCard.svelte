@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import BiggerPicture from 'bigger-picture';
+
   type WebApp = {
     name: string;
     type: string;
@@ -22,6 +25,35 @@
       company: 'ActivBody'
     }
   ];
+
+  const enlargeImage = () => {
+    if (browser) {
+      // initialize
+      let biggerPicture = BiggerPicture({
+        target: document.body
+      });
+
+      // open (will be a child of the target element above)
+      biggerPicture.open({
+        items: [
+          {
+            img: '/examples/web-app/activforce/01_login.png',
+            thumb: '/examples/web-app/activforce/01_login.png',
+            alt: 'Example',
+            height: 800,
+            width: 800
+            // if you're using the default intro animation
+            // element: node
+          }
+        ]
+      });
+    }
+  };
+  
+  // TODO : create a svelte component that houses the image when opened with bigger picture.
+  // include close button
+
+  // then do I need bigger picture at all?
 </script>
 
 <!--
@@ -33,6 +65,15 @@ Shows a list of web applications.
 ### Features
 feature_description
 -->
+
+<div id="images">
+  <img
+    src="/examples/web-app/activforce/01_login.png"
+    alt="ActivForce Login"
+    width="500px"
+    on:click={() => enlargeImage()}
+  />
+</div>
 
 <div class="web-apps-card-wrapper">
   <h2>Web Applications</h2>
