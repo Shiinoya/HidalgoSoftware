@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import Countdown from './Countdown.svelte';
+</script>
 
 <!--
 @component
@@ -13,8 +15,17 @@ feature_description
 - prop_name: prop_description
 -->
 
-<title>Timer</title>
+<title>Board Game Timer</title>
 
-<div></div>
+<div class="view-wrapper">
+  <h1>Board Game Timer</h1>
+  <Countdown minutes={1} />
+</div>
 
-<style lang="scss"></style>
+<style lang="scss">
+  div.view-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
