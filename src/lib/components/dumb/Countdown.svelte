@@ -3,7 +3,8 @@
 
   let runningCountdown = $state(false);
 
-  let { minutes } = $props();
+  let { start = false, pause = false, reset = false , minutes = 1 } = $props();
+
   let seconds = minutes * 60;
   let timeLeft = $state(seconds * 1000); // in milliseconds
 
@@ -39,10 +40,13 @@
 A button to display a countdown once clicked.
 
 ### Features
-Takes in a prop to determine the time pool.
+Takes in a prop to determine the initial time.
 
 ### Props
-- `minutes` (number): The starting time pool in minutes.
+- `start` (boolean): If true, the countdown starts immediately.
+- `pause` (boolean): If true, the countdown pauses.
+- `reset` (boolean): If true, the countdown resets to the initial time.
+- `minutes` (number): The initial time in minutes.
 -->
 
 <div class="component-wrapper">
