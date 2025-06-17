@@ -39,10 +39,10 @@
 A button to display a countdown once clicked.
 
 ### Features
-feature_description
+Takes in a prop to determine the time pool.
 
 ### Props
-- prop_name: prop_description
+- `minutes` (number): The starting time pool in minutes.
 -->
 
 <div class="component-wrapper">
@@ -55,9 +55,9 @@ feature_description
   div.component-wrapper {
     button {
       max-width: 400px;
-      padding: 2em;
+      padding: 1.5em;
 
-      font-size: 3rem;
+      font-size: 4rem;
       color: white;
 
       cursor: pointer;
