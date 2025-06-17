@@ -2,19 +2,6 @@
   import Countdown from './Countdown.svelte';
 </script>
 
-<!--
-@component
-
-## component_name
-component_description
-
-### Features
-feature_description
-
-### Props
-- prop_name: prop_description
--->
-
 <title>Board Game Timer</title>
 
 <div class="view-wrapper">
@@ -24,8 +11,16 @@ feature_description
 
 <style lang="scss">
   div.view-wrapper {
+    // TODO : make this response
+    height: 500px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h1 {
+      text-align: center;
+      line-height: 1.2em;
+    }
   }
 </style>
