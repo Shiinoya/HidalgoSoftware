@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Countdown from './Countdown.svelte';
+  import Countdown from '../../../lib/components/dumb/Countdown.svelte';
 </script>
 
 <title>Board Game Timer</title>
