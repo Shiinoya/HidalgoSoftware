@@ -1,36 +1,42 @@
 <script lang="ts">
   import { onDestroy } from 'svelte';
 
+  let runningCountdown = $state(false);
+
   let { minutes } = $props();
   let seconds = minutes * 60;
   let timeLeft = $state(seconds * 1000); // in milliseconds
 
   let timer: ReturnType<typeof setInterval>;
 
-  const startCountdown = () => {
-    if (timer) clearInterval(timer); // reset if already running
+  $effect(() => {
+    if (runningCountdown) {
+      if (timer) clearInterval(timer); // reset if already running
 
-    console.log(`timer started`);
+      timer = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft -= 1000;
+        } else {
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
 
-    timer = setInterval(() => {
-      if (timeLeft > 0) {
-        timeLeft -= 1000;
-      } else {
-        clearInterval(timer);
-      }
-    }, 1000);
-  };
-
-  onDestroy(() => {
-    clearInterval(timer);
+    onDestroy(() => {
+      clearInterval(timer);
+    });
   });
+
+  const startCountdown = () => {
+    runningCountdown = true;
+  };
 </script>
 
 <!--
 @component
 
 ## Countdown
-component_description
+A button to display a countdown once clicked.
 
 ### Features
 feature_description
@@ -40,16 +46,25 @@ feature_description
 -->
 
 <div class="component-wrapper">
-  <div onclick={startCountdown}>{timeLeft.toFixed(0)}</div>
+  <button onclick={startCountdown}>
+    {Math.floor(timeLeft / 1000)}
+  </button>
 </div>
 
 <style lang="scss">
   div.component-wrapper {
-    max-width: 400px;
-    padding: 2em;
+    button {
+      max-width: 400px;
+      padding: 2em;
 
-    font-size: 3rem;
+      font-size: 3rem;
+      color: white;
 
-    cursor: pointer;
+      cursor: pointer;
+
+      background: none;
+      border: 1px solid rgba(198, 145, 247, 0.9);
+      border-radius: 20px;
+    }
   }
 </style>
