@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+  let { onStart, onPause, onReset } = $props();
+</script>
 
 <!--
 @component
@@ -13,12 +15,16 @@ feature_description
 - prop_name: prop_description
 -->
 
-<title></title>
-
 <div class="component-wrapper">
-  <button><span class="material-symbols-outlined">play_arrow</span></button>
-  <button><span class="material-symbols-outlined">pause</span></button>
-  <button><span class="material-symbols-outlined">stop</span></button>
+  <button onclick={() => onStart?.()}>
+    <span class="material-symbols-outlined">play_arrow</span>
+  </button>
+  <button onclick={() => onPause?.()}>
+    <span class="material-symbols-outlined">pause</span>
+  </button>
+  <button onclick={() => onReset?.()}>
+    <span class="material-symbols-outlined">stop</span>
+  </button>
 </div>
 
 <style lang="scss">
@@ -26,11 +32,11 @@ feature_description
     margin: 1em 0;
 
     button {
-      margin: 0 0.5em;
+      margin: 1em 2em;
       padding: 0.5em;
 
       color: white;
-      font-size: 1.5em;
+      font-size: 1em;
 
       background: none;
       border: none;
