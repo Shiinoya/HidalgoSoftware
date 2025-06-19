@@ -3,7 +3,7 @@
 
   let seconds = minutes * 60;
   let timeLeft = $state(seconds * 1000); // in milliseconds
-  let timeOnPause: number = $state(0);
+  let timeOnPause = $state(0);
 
   let timer: ReturnType<typeof setInterval>;
 
