@@ -5,7 +5,25 @@
   let start = $state(false);
   let pause = $state(false);
   let reset = $state(false);
-  let minutes = 1.5; // Initial time in minutes
+  let minutes = 1.5; // initial time in minutes
+
+  function startCountdown() {
+    start = true;
+    pause = false;
+    reset = false;
+  }
+
+  function pauseCountdown() {
+    start = false;
+    pause = true;
+    reset = false;
+  }
+
+  function resetCountdown() {
+    start = false;
+    pause = false;
+    reset = true;
+  }
 </script>
 
 <title>Board Game Timer</title>
@@ -14,13 +32,10 @@
   <h1>Board Game Timer</h1>
   <Countdown {start} {pause} {reset} {minutes} />
   <TimerController
-    onStart={() => (start = true)}
-    onPause={() => (pause = true)}
-    onReset={() => (reset = true)}
+    onStart={() => startCountdown()}
+    onPause={() => pauseCountdown()}
+    onReset={() => resetCountdown()}
   />
-  {start}
-  {pause}
-  {reset}
 </div>
 
 <style lang="scss">

@@ -1,36 +1,40 @@
 <script lang="ts">
-  import { onDestroy } from 'svelte';
-
-  let runningCountdown = $state(false);
-
-  let { start = false, pause = false, reset = false , minutes = 1 } = $props();
+  let { start = false, pause = false, reset = false, minutes = 1 } = $props();
 
   let seconds = minutes * 60;
   let timeLeft = $state(seconds * 1000); // in milliseconds
+  let timeOnPause: number = $state(0);
 
   let timer: ReturnType<typeof setInterval>;
 
+  function startCountdown() {
+    if (timeOnPause !== 0) timeLeft = timeOnPause;
+
+    timer = setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft-= 1000; // decrease by 1000 milliseconds
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+
+  function pauseCountdown() {
+    if (timer) clearInterval(timer);
+    timeOnPause = timeLeft;
+  }
+
+  function resetCountdown() {
+    if (timer) clearInterval(timer);
+    timeLeft = seconds * 1000; // reset to initial time
+    timeOnPause = 0;
+  }
+
   $effect(() => {
-    if (runningCountdown) {
-      if (timer) clearInterval(timer); // reset if already running
-
-      timer = setInterval(() => {
-        if (timeLeft > 0) {
-          timeLeft -= 1000;
-        } else {
-          clearInterval(timer);
-        }
-      }, 1000);
-    }
-
-    onDestroy(() => {
-      clearInterval(timer);
-    });
+    if (start) startCountdown();
+    if (pause) pauseCountdown()
+    if (reset) resetCountdown();
   });
-
-  const startCountdown = () => {
-    runningCountdown = true;
-  };
 </script>
 
 <!--
@@ -50,7 +54,7 @@ Takes in a prop to determine the initial time.
 -->
 
 <div class="component-wrapper">
-  <button onclick={startCountdown}>
+  <button onclick={() => (startCountdown())}>
     {Math.floor(timeLeft / 1000)}
   </button>
 </div>
@@ -58,6 +62,7 @@ Takes in a prop to determine the initial time.
 <style lang="scss">
   div.component-wrapper {
     button {
+      width: 300px;
       max-width: 400px;
       padding: 1.5em;
 
