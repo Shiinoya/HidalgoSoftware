@@ -6,13 +6,13 @@
 @component
 
 ## Timer Controller
-component_description
+Provides buttons to control the timer.
 
 ### Features
-feature_description
+Start timer, pause timer, and reset timer.
 
 ### Props
-- prop_name: prop_description
+- Callback props
 -->
 
 <div class="component-wrapper">
