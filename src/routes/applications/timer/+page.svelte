@@ -1,12 +1,41 @@
 <script lang="ts">
-  import Countdown from './Countdown.svelte';
+  import TimerController from '$lib/components/dumb/TimerController.svelte';
+  import Countdown from '$lib/components/dumb/Countdown.svelte';
+
+  let start = $state(false);
+  let pause = $state(false);
+  let reset = $state(false);
+  let minutes = 0.1; // initial time in minutes
+
+  function startCountdown() {
+    start = true;
+    pause = false;
+    reset = false;
+  }
+
+  function pauseCountdown() {
+    start = false;
+    pause = true;
+    reset = false;
+  }
+
+  function resetCountdown() {
+    start = false;
+    pause = false;
+    reset = true;
+  }
 </script>
 
 <title>Board Game Timer</title>
 
 <div class="view-wrapper">
   <h1>Board Game Timer</h1>
-  <Countdown minutes={1} />
+  <Countdown {start} {pause} {reset} {minutes} onEnd={() => pauseCountdown()} />
+  <TimerController
+    onStart={() => startCountdown()}
+    onPause={() => pauseCountdown()}
+    onReset={() => resetCountdown()}
+  />
 </div>
 
 <style lang="scss">
