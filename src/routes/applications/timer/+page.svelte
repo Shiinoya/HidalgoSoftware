@@ -5,7 +5,7 @@
   let start = $state(false);
   let pause = $state(false);
   let reset = $state(false);
-  let minutes = 1.5; // initial time in minutes
+  let minutes = 0.1; // initial time in minutes
 
   function startCountdown() {
     start = true;
@@ -30,7 +30,7 @@
 
 <div class="view-wrapper">
   <h1>Board Game Timer</h1>
-  <Countdown {start} {pause} {reset} {minutes} />
+  <Countdown {start} {pause} {reset} {minutes} onEnd={() => pauseCountdown()} />
   <TimerController
     onStart={() => startCountdown()}
     onPause={() => pauseCountdown()}

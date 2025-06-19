@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { start = false, pause = false, reset = false, minutes = 1 } = $props();
+  let { start = false, pause = false, reset = false, minutes = 1, onEnd } = $props();
 
   let seconds = minutes * 60;
   let timeLeft = $state(seconds * 1000); // in milliseconds
@@ -15,6 +15,7 @@
         timeLeft-= 1000; // decrease by 1000 milliseconds
       } else {
         clearInterval(timer);
+        onEnd?.();
       }
     }, 1000);
   }
