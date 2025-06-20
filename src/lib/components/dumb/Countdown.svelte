@@ -65,7 +65,9 @@ Takes in a prop to determine the initial time in milliseconds.
   div.component-wrapper {
     button {
       width: 300px;
-      max-width: 400px;
+      max-width: 300px;
+
+      margin: 1rem;
       padding: 1.5em;
 
       font-size: 4rem;
