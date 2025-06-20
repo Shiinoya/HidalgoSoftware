@@ -9,10 +9,12 @@
 Provides buttons to control the timer.
 
 ### Features
-Start timer, pause timer, and reset timer.
+Start timer, pause timer, and reset timer events sent to parent component.
 
 ### Props
-- Callback props
+- `onStart` (function): Callback for starting the timer.
+- `onPause` (function): Callback for pausing the timer.
+- `onReset` (function): Callback for resetting the timer.
 -->
 
 <div class="component-wrapper">
