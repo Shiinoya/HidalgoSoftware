@@ -1,8 +1,7 @@
 <script lang="ts">
-  let { start = false, pause = false, reset = false, minutes = 1, onEnd } = $props();
+  let { start = false, pause = false, reset = false, timeToStart = 60000, onEnd } = $props();
 
-  let seconds = minutes * 60;
-  let timeLeft = $state(seconds * 1000); // in milliseconds
+  let timeLeft = $state(timeToStart);
   let timeOnPause = $state(0);
 
   let timer: ReturnType<typeof setInterval>;
@@ -27,11 +26,12 @@
 
   function resetCountdown() {
     if (timer) clearInterval(timer);
-    timeLeft = seconds * 1000; // reset to initial time
+    timeLeft = timeToStart; // reset to initial time
     timeOnPause = 0;
   }
 
   $effect(() => {
+    if (!start && !pause) timeLeft = timeToStart; // if timeToStart changes
     if (start) startCountdown();
     if (pause) pauseCountdown()
     if (reset) resetCountdown();
@@ -45,13 +45,13 @@
 A button to display a countdown once clicked.
 
 ### Features
-Takes in a prop to determine the initial time.
+Takes in a prop to determine the initial time in milliseconds.
 
 ### Props
 - `start` (boolean): If true, the countdown starts immediately.
 - `pause` (boolean): If true, the countdown pauses.
 - `reset` (boolean): If true, the countdown resets to the initial time.
-- `minutes` (number): The initial time in minutes.
+- `milliseconds` (number): The initial time in milliseconds.
 -->
 
 <div class="component-wrapper">

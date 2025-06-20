@@ -1,11 +1,15 @@
 <script lang="ts">
+  import { minutesToMilliseconds } from '$lib/utils/time';
+
+  import TimerSettings from '../dumb/TimerSettings.svelte';
   import TimerController from '$lib/components/dumb/TimerController.svelte';
   import Countdown from '$lib/components/dumb/Countdown.svelte';
+
+  let timeToStart = $state(1); // in minutes
 
   let start = $state(false);
   let pause = $state(false);
   let reset = $state(false);
-  let minutes = 0.1; // initial time in minutes
 
   function startCountdown() {
     start = true;
@@ -39,8 +43,15 @@ feature_description
 - prop_name: prop_description
 -->
 
-<div>
-  <Countdown {start} {pause} {reset} {minutes} onEnd={() => pauseCountdown()} />
+<div class="component-wrapper">
+  <TimerSettings bind:timeToStart />
+  <Countdown
+    {start}
+    {pause}
+    {reset}
+    timeToStart={minutesToMilliseconds(timeToStart)}
+    onEnd={() => pauseCountdown()}
+  />
   <TimerController
     onStart={() => startCountdown()}
     onPause={() => pauseCountdown()}
