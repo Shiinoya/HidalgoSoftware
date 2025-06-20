@@ -6,6 +6,7 @@
 
   let timer: ReturnType<typeof setInterval>;
 
+  // TODO : add a pause functionality when being clicked on while timer is running
   function startCountdown() {
     if (timeOnPause !== 0) timeLeft = timeOnPause;
 
@@ -51,7 +52,7 @@ Takes in a prop to determine the initial time in milliseconds.
 - `start` (boolean): If true, the countdown starts immediately.
 - `pause` (boolean): If true, the countdown pauses.
 - `reset` (boolean): If true, the countdown resets to the initial time.
-- `milliseconds` (number): The initial time in milliseconds.
+- `timeToStart` (number): The initial time in milliseconds.
 -->
 
 <div class="component-wrapper">
