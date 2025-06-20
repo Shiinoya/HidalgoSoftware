@@ -5,14 +5,14 @@
 <!--
 @component
 
-## component_name
-component_description
+## Timer Settings
+Component to adjust timer settings.
 
 ### Features
-feature_description
+Allows for initial time in minutes.
 
 ### Props
-- prop_name: prop_description
+- `timeToStart` (number): Initial time in minutes, bound to the parent component.
 -->
 
 <div class="component-wrapper">
