@@ -8,7 +8,7 @@
 
   // TODO : add a pause functionality when being clicked on while timer is running
   function startCountdown() {
-    if (timeOnPause !== 0) timeLeft = timeOnPause;
+    if (timeOnPause !== 0) timeLeft = timeOnPause; // unpause if paused
 
     timer = setInterval(() => {
       if (timeLeft > 0) {
@@ -56,7 +56,10 @@ Takes in a prop to determine the initial time in milliseconds.
 -->
 
 <div class="component-wrapper">
-  <button onclick={() => (startCountdown())}>
+  <!-- // TODO : clicking multiple times generates multiple timers
+  // TODO : add pause functionality as well
+  // TODO : prevent double click zoom on mobile -->
+  <button onclick={() => (start = true)}>
     {Math.floor(timeLeft / 1000)}
   </button>
 </div>
