@@ -22,7 +22,16 @@
     timer = 0;
   }
 
-  // TODO : add a pause functionality when being clicked on while timer is running
+  function tapToHandle() {
+    if (timer === 0) {
+      startCountdown();
+    } else {
+      pauseCountdown();
+    }
+
+    // TODO : if multiple timers, switch to the next timer and start it
+  }
+
   function startCountdown() {
     // if timer is already running, do nothing
     if (timer != 0) return;
@@ -74,8 +83,7 @@ Takes in a prop to determine the initial time in milliseconds.
 -->
 
 <div class="component-wrapper">
-  <!-- // TODO : add pause functionality as well -->
-  <button onclick={() => (start = true)}>
+  <button onclick={() => tapToHandle()}>
     {Math.floor(timeLeft / 1000)}
   </button>
 </div>
