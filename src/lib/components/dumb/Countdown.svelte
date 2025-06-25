@@ -4,37 +4,55 @@
   let timeLeft = $state(timeToStart);
   let timeOnPause = $state(0);
 
-  let timer: ReturnType<typeof setInterval>;
+  let timer: ReturnType<typeof setInterval> = 0;
 
-  // TODO : add a pause functionality when being clicked on while timer is running
-  function startCountdown() {
-    if (timeOnPause !== 0) timeLeft = timeOnPause;
-
+  function runTimer() {
     timer = setInterval(() => {
       if (timeLeft > 0) {
-        timeLeft-= 1000; // decrease by 1000 milliseconds
+        timeLeft -= 1000; // decrease by 1000 milliseconds
       } else {
-        clearInterval(timer);
         onEnd?.();
+        clearTimer();
       }
     }, 1000);
   }
 
+  function clearTimer() {
+    clearInterval(timer);
+    timer = 0;
+  }
+
+  // TODO : add a pause functionality when being clicked on while timer is running
+  function startCountdown() {
+    // if timer is already running, do nothing
+    if (timer != 0) return;
+
+    // if timer is paused, resume from the paused time
+    if (timeOnPause > 0) {
+      timeLeft = timeOnPause;
+      timeOnPause = 0;
+    }
+
+    runTimer();
+  }
+
   function pauseCountdown() {
-    if (timer) clearInterval(timer);
     timeOnPause = timeLeft;
+    clearTimer();
   }
 
   function resetCountdown() {
-    if (timer) clearInterval(timer);
     timeLeft = timeToStart; // reset to initial time
     timeOnPause = 0;
+    clearTimer();
+
+    // TODO : visibly show how to reset the timer
   }
 
   $effect(() => {
     if (!start && !pause) timeLeft = timeToStart; // if timeToStart changes
     if (start) startCountdown();
-    if (pause) pauseCountdown()
+    if (pause) pauseCountdown();
     if (reset) resetCountdown();
   });
 </script>
@@ -56,7 +74,8 @@ Takes in a prop to determine the initial time in milliseconds.
 -->
 
 <div class="component-wrapper">
-  <button onclick={() => (startCountdown())}>
+  <!-- // TODO : add pause functionality as well -->
+  <button onclick={() => (start = true)}>
     {Math.floor(timeLeft / 1000)}
   </button>
 </div>

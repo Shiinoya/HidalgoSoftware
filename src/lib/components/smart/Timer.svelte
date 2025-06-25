@@ -5,7 +5,7 @@
   import TimerController from '$lib/components/dumb/TimerController.svelte';
   import Countdown from '$lib/components/dumb/Countdown.svelte';
 
-  let timeToStart = $state(1); // in minutes
+  let timeToStart = $state(.10); // in minutes
 
   let start = $state(false);
   let pause = $state(false);
@@ -27,6 +27,13 @@
     start = false;
     pause = false;
     reset = true;
+  }
+
+  // TODO : would be nice to add a way to reset (all buttons disappear except reset?)
+  function endCountdown() {
+    start = false;
+    pause = false;
+    reset = false;
   }
 </script>
 
@@ -50,7 +57,7 @@ feature_description
     {pause}
     {reset}
     timeToStart={minutesToMilliseconds(timeToStart)}
-    onEnd={() => pauseCountdown()}
+    onEnd={() => endCountdown()}
   />
   <TimerController
     onStart={() => startCountdown()}

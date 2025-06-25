@@ -3,7 +3,8 @@
 
   import Timer from '$lib/components/smart/Timer.svelte';
 
-  let timers: Component[] = [];
+  // reset this to [];
+  let timers: Component[] = [Timer];
 </script>
 
 <title>Board Game Timer</title>
