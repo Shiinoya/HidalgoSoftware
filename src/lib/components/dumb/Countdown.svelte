@@ -50,7 +50,7 @@
   }
 
   $effect(() => {
-    // if (!start && !pause) timeLeft = timeToStart; // if timeToStart changes
+    if (!start && !pause) timeLeft = timeToStart; // if timeToStart changes
     if (start) startCountdown();
     if (pause) pauseCountdown();
     if (reset) resetCountdown();
