@@ -1,4 +1,5 @@
 import { browser } from '$app/environment';
+// deprecated : use set/getLocalStorage from localStorage.svelte
 import { handleLocalStorage } from './localStorage.svelte';
 
 const userPrefersDarkMode = (): boolean | void => {
@@ -14,6 +15,7 @@ const setThemeAttribute = (theme: string): void => {
 };
 
 export const setTheme = (): void => {
+  // deprecated : use set/getLocalStorage from localStorage.svelte
   const currentTheme = handleLocalStorage('theme');
 
   if (currentTheme) {
@@ -30,20 +32,24 @@ export const setTheme = (): void => {
 };
 
 export const changeTheme = (): void => {
+  // deprecated : use set/getLocalStorage from localStorage.svelte
   const currentTheme = handleLocalStorage('theme');
 
   if (!currentTheme) {
     setThemeAttribute(userPrefersDarkMode() ? 'dark' : 'light');
+    // deprecated : use set/getLocalStorage from localStorage.svelte
     handleLocalStorage('theme', userPrefersDarkMode() ? 'dark' : 'light');
   }
 
   if (currentTheme === 'dark') {
     setThemeAttribute('light');
+    // deprecated : use set/getLocalStorage from localStorage.svelte
     handleLocalStorage('theme', 'light');
   }
 
   if (currentTheme === 'light') {
     setThemeAttribute('dark');
+    // deprecated : use set/getLocalStorage from localStorage.svelte
     handleLocalStorage('theme', 'dark');
   }
 };

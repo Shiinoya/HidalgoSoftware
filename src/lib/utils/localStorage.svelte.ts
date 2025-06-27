@@ -1,5 +1,6 @@
 import { browser } from '$app/environment';
 
+// deprecated : use set/getLocalStorage from localStorage.svelte
 export const handleLocalStorage = (key: string, value?: string): string | void => {
   let storedItem = value;
 
