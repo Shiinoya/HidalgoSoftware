@@ -19,3 +19,16 @@ export const handleLocalStorage = (key: string, value?: string): string | void =
     }
   }
 };
+
+function setLocalStorage<T>(key: string, value: T): void {
+  if (!browser) return;
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getLocalStorage<T>(key: string): T | undefined {
+  if (!browser) return;
+  const stored = localStorage.getItem(key);
+  return stored ? (JSON.parse(stored) as T) : undefined;
+}
+
+export { setLocalStorage, getLocalStorage };
