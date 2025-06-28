@@ -7,6 +7,7 @@
 
   const changeCurrentTheme = () => {
     changeTheme();
+    // deprecated : use set/getLocalStorage from localStorage.svelte
     theme = handleLocalStorage('theme');
   };
 </script>
