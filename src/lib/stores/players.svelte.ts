@@ -4,8 +4,8 @@ import { setLocalStorage, getLocalStorage } from '$lib/utils/localStorage.svelte
 type Player = {
   name: string;
   time: number;
-  icon: string;
-  color: string;
+  icon?: string;
+  color?: string;
 };
 
 export const players = $state<Player[]>([]);
@@ -21,6 +21,8 @@ if (browser) {
 }
 
 // set players
-$effect(() => {
-  if (browser) setLocalStorage('players', players);
-});
+export function syncPlayers(): void {
+  $effect(() => {
+    if (browser) setLocalStorage('players', players);
+  });
+}
