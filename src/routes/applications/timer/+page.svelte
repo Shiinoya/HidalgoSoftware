@@ -2,6 +2,7 @@
   import type { Component } from 'svelte';
 
   import Timer from '$lib/components/smart/Timer.svelte';
+  import PlayerCard from '$lib/components/smart/PlayerCard.svelte';
 
   let timers: Component[] = [];
 </script>
@@ -15,6 +16,10 @@
     <span class="material-symbols-outlined">add</span>
     <span class="material-symbols-outlined">hourglass</span>
   </button>
+
+  <div>
+    <PlayerCard />
+  </div>
 
   <div class="timers-wrapper">
     {#each timers as timer}

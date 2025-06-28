@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import Field from '../ark-ui/Field.svelte';
+</script>
 
 <!--
 @component
@@ -13,8 +15,8 @@ feature_description
 - prop_name: prop_description
 -->
 
-<div class=component-wrapper>
-  
+<div class="component-wrapper">
+  <Field />
 </div>
 
 <style lang="scss"></style>
