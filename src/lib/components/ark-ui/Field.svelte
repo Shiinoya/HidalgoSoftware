@@ -16,10 +16,10 @@ feature_description
 -->
 
 <Field.Root>
-  <Field.Label>Label</Field.Label>
-  <Field.Input />
-  <Field.HelperText>Some additional Info</Field.HelperText>
-  <Field.ErrorText>Error Info</Field.ErrorText>
+  <Field.Label>Player:</Field.Label>
+  <Field.Input placeholder="Player Name"/>
+  <Field.HelperText></Field.HelperText>
+  <Field.ErrorText></Field.ErrorText>
 </Field.Root>
 
 <style lang="scss"></style>
