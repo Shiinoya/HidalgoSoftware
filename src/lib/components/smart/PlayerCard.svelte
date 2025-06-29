@@ -1,5 +1,8 @@
 <script lang="ts">
-  import Field from '../ark-ui/Field.svelte';
+
+  let name = $state('');
+
+  $inspect('name inspect', name);
 </script>
 
 <!--
@@ -16,7 +19,6 @@ feature_description
 -->
 
 <div class="component-wrapper">
-  <Field />
 </div>
 
 <style lang="scss"></style>
