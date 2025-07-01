@@ -2,24 +2,20 @@
   import ColorSelect from 'svelte-color-select';
 
   let dialog: HTMLDialogElement | undefined;
-  let rgb = $state({ r: 0.4, g: 0.2, b: 0.6 });
+  let colorPicker = $state({ r: 255, g: 255, b: 255 });
+  let currentColorHex = $state('');
 
-  let currentColor = $state({
-    r: 255,
-    g: 255,
-    b: 255
-  });
+  function rgbToHex({ r, g, b }: { r: number; g: number; b: number }): string {
+    const toHex = (value: number) =>
+      Math.round(value * 255)
+        .toString(16)
+        .padStart(2, '0');
 
-  function formatRGB(value: number): number {
-    return Math.round(value * 255);
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
   }
 
   $effect(() => {
-    currentColor = {
-      r: formatRGB(rgb.r),
-      g: formatRGB(rgb.g),
-      b: formatRGB(rgb.b)
-    };
+    currentColorHex = rgbToHex({ r: colorPicker.r, g: colorPicker.g, b: colorPicker.b });
   });
 </script>
 
@@ -38,35 +34,20 @@ Displays a dialog with a color picker that allows users to select a color. Chose
 
 <div class="component-wrapper">
   <button class="open-close" onclick={() => dialog?.showModal()}>
-    <span
-      class="material-symbols-outlined"
-      style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
-    >
-      palette
-    </span>
+    <span class="material-symbols-outlined" style={`color: ${currentColorHex}`}>palette</span>
   </button>
 </div>
 
 <dialog bind:this={dialog} closedby="any">
   <div class="header">
-    <span
-      class="icon material-symbols-outlined"
-      style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
-    >
-      palette
-    </span>
-    <span
-      class="text-example"
-      style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
-    >
-      Pick a color
-    </span>
+    <span class="icon material-symbols-outlined" style={`color: ${currentColorHex}`}>palette</span>
+    <span class="text-example" style={`color: ${currentColorHex}`}>Pick a color</span>
     <button onclick={() => dialog?.close()}>
       <span class="material-symbols-outlined">close</span>
     </button>
   </div>
 
-  <ColorSelect bind:rgb />
+  <ColorSelect bind:rgb={colorPicker} />
 </dialog>
 
 <style lang="scss">
