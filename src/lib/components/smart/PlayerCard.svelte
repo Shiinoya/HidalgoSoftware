@@ -8,6 +8,8 @@
     icon: undefined,
     color: 'white'
   });
+
+  $inspect('Player', player)
 </script>
 
 <!--
@@ -25,7 +27,7 @@ feature_description
 
 <div class="component-wrapper">
   <div class="name-color">
-    <span>Player Name:<input value={player.name} /></span>
+    <input bind:value={player.name} />
     <ColorPicker bind:currentColorHex={player.color} />
   </div>
   <span>Player Time:<input value={player.time} type="number" /></span>
@@ -48,10 +50,14 @@ feature_description
 
     input {
       margin-left: 1rem;
+      height: 2rem;
+
+      font-size: 1rem;
     }
 
     .name-color {
       display: flex;
+      align-items: center;
       gap: 2rem;
     }
   }
