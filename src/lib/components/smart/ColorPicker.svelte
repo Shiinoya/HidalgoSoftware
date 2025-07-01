@@ -2,6 +2,7 @@
   import ColorSelect from 'svelte-color-select';
 
   let showColorPicker = $state(false);
+  let dialog: HTMLDialogElement | undefined;
 
   let rgb = $state({ r: 0.4, g: 0.2, b: 0.6 });
 
@@ -38,7 +39,7 @@ Allows user to select a color using a drag and drop. The selected color is displ
 -->
 
 <div class="component-wrapper">
-  <button class="open-close" onclick={() => (showColorPicker = !showColorPicker)}>
+  <button class="open-close" onclick={() => dialog?.showModal()}>
     <span
       class="material-symbols-outlined"
       style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
@@ -46,16 +47,16 @@ Allows user to select a color using a drag and drop. The selected color is displ
       palette
     </span>
   </button>
-
-  <div class="color-picker" class:showColorPicker>
-    <div class="close-button">
-      <button onclick={() => (showColorPicker = false)}>
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-    <ColorSelect bind:rgb />
-  </div>
 </div>
+
+<dialog bind:this={dialog} closedby="any">
+  <div class="close-button">
+    <button onclick={() => dialog?.close()}>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <ColorSelect bind:rgb />
+</dialog>
 
 <style lang="scss">
   div.component-wrapper {
@@ -68,31 +69,24 @@ Allows user to select a color using a drag and drop. The selected color is displ
         font-size: 3rem;
       }
     }
+  }
 
-    div.color-picker {
-      display: none;
+  dialog {
+    border: none;
 
-      div.close-button {
-        display: flex;
-        justify-content: flex-end;
+    &::backdrop {
+      background: black;
+      opacity: 0.5;
+    }
 
-        button {
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-      }
+    div.close-button {
+      display: flex;
+      justify-content: flex-end;
 
-      &.showColorPicker {
-        display: block;
-        padding: 0.5rem 1rem;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        background: black;
-        border-radius: 20px;
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
       }
     }
   }
