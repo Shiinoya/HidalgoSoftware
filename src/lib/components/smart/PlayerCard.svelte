@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Player } from '$lib/stores/players.svelte';
+  import ColorPicker from './ColorPicker.svelte';
 
   let player: Player = $state({
     name: 'Player',
@@ -27,6 +28,7 @@ feature_description
   <span>Player Time:<input value={player.time} type="number" /></span>
   <span>Player Icon:<input value={player.icon} /></span>
   <span>Player Color:<input value={player.color} /></span>
+  <ColorPicker />
 </div>
 
 <style lang="scss">
