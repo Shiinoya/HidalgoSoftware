@@ -49,7 +49,7 @@ Allows user to select a color using a drag and drop. The selected color is displ
   </button>
 </div>
 
-<dialog bind:this={dialog} closedby="any" open>
+<dialog bind:this={dialog} closedby="any">
   <div class="header">
     <span
       class="icon material-symbols-outlined"
