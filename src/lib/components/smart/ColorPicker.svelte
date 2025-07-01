@@ -1,9 +1,7 @@
 <script lang="ts">
   import ColorSelect from 'svelte-color-select';
 
-  let showColorPicker = $state(false);
   let dialog: HTMLDialogElement | undefined;
-
   let rgb = $state({ r: 0.4, g: 0.2, b: 0.6 });
 
   let currentColor = $state({
@@ -32,7 +30,7 @@
 Component for selecting colors.
 
 ### Features
-Allows user to select a color using a drag and drop. The selected color is displayed as the icon's color.
+Displays a dialog with a color picker that allows users to select a color. Chosen color is displayed in the dialog header and icons.
 
 ### Props
 - prop_name: prop_description
