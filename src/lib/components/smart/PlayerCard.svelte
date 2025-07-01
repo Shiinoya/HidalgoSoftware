@@ -1,4 +1,13 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import type { Player } from '$lib/stores/players.svelte';
+
+  let player: Player = $state({
+    name: 'Player',
+    time: 0,
+    icon: undefined,
+    color: 'white'
+  });
+</script>
 
 <!--
 @component
@@ -13,8 +22,21 @@ feature_description
 - prop_name: prop_description
 -->
 
-<title></title>
+<div class="component-wrapper">
+  <span>Player Name:<input value={player.name} /></span>
+  <span>Player Time:<input value={player.time} type="number" /></span>
+  <span>Player Icon:<input value={player.icon} /></span>
+  <span>Player Color:<input value={player.color} /></span>
+</div>
 
-<div></div>
+<style lang="scss">
+  div.component-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-<style lang="scss"></style>
+    input {
+      margin-left: 1rem;
+    }
+  }
+</style>

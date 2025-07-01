@@ -21,7 +21,7 @@
 
   <div class="timers-wrapper">
     {#each timers as timer}
-      <svelte:component this={timer} />
+      <!-- <svelte:component this={timer} /> -->
     {/each}
   </div>
 </div>
