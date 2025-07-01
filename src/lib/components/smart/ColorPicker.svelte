@@ -49,12 +49,25 @@ Allows user to select a color using a drag and drop. The selected color is displ
   </button>
 </div>
 
-<dialog bind:this={dialog} closedby="any">
-  <div class="close-button">
+<dialog bind:this={dialog} closedby="any" open>
+  <div class="header">
+    <span
+      class="icon material-symbols-outlined"
+      style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
+    >
+      palette
+    </span>
+    <span
+      class="text-example"
+      style={`color: rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`}
+    >
+      Pick a color
+    </span>
     <button onclick={() => dialog?.close()}>
       <span class="material-symbols-outlined">close</span>
     </button>
   </div>
+
   <ColorSelect bind:rgb />
 </dialog>
 
@@ -79,9 +92,21 @@ Allows user to select a color using a drag and drop. The selected color is displ
       opacity: 0.5;
     }
 
-    div.close-button {
-      display: flex;
-      justify-content: flex-end;
+    div.header {
+      margin-bottom: 0.5rem;
+
+      display: grid;
+      align-items: center;
+      grid-template-columns: 20% auto 15%;
+
+      span.icon {
+        font-size: 3rem;
+      }
+
+      span.text-example {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
 
       button {
         background: none;
