@@ -30,7 +30,7 @@ feature_description
     <input bind:value={player.name} />
     <ColorPicker bind:currentColorHex={player.color} />
   </div>
-  <span>Player Time:<input value={player.time} type="number" /></span>
+  <span>Player Time:<input bind:value={player.time} type="number" /></span>
   <span>Player Icon:<input value={player.icon} /></span>
 </div>
 
