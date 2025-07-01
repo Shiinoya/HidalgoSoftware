@@ -1,9 +1,12 @@
 <script lang="ts">
   import ColorSelect from 'svelte-color-select';
 
+  let { currentColorHex = $bindable() } = $props();
+
   let dialog: HTMLDialogElement | undefined;
+
+  // ColorSelect component exports RGB values
   let colorPicker = $state({ r: 255, g: 255, b: 255 });
-  let currentColorHex = $state('');
 
   function rgbToHex({ r, g, b }: { r: number; g: number; b: number }): string {
     const toHex = (value: number) =>

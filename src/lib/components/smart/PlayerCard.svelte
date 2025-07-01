@@ -25,9 +25,9 @@ feature_description
 
 <div class="component-wrapper">
   <div class="name-color">
-  <span>Player Name:<input value={player.name} /></span>
-  <ColorPicker />
-</div>
+    <span>Player Name:<input value={player.name} /></span>
+    <ColorPicker bind:currentColorHex={player.color} />
+  </div>
   <span>Player Time:<input value={player.time} type="number" /></span>
   <span>Player Icon:<input value={player.icon} /></span>
 </div>
