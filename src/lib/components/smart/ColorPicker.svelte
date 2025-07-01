@@ -48,6 +48,11 @@ Allows user to select a color using a drag and drop. The selected color is displ
   </button>
 
   <div class="color-picker" class:showColorPicker>
+    <div class="close-button">
+      <button onclick={() => (showColorPicker = false)}>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
     <ColorSelect bind:rgb />
   </div>
 </div>
@@ -67,13 +72,27 @@ Allows user to select a color using a drag and drop. The selected color is displ
     div.color-picker {
       display: none;
 
+      div.close-button {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+      }
+
       &.showColorPicker {
         display: block;
+        padding: 0.5rem 1rem;
+
         position: absolute;
         top: 0;
         left: 0;
 
         background: black;
+        border-radius: 20px;
       }
     }
   }
