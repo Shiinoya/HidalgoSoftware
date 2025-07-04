@@ -1,7 +1,7 @@
 import { browser } from '$app/environment';
 import { setLocalStorage, getLocalStorage } from '$lib/utils/localStorage.svelte';
 
-type Player = {
+export type Player = {
   name: string;
   time: number;
   icon?: string;
