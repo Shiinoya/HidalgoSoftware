@@ -1,3 +1,33 @@
+/* #region reset styling */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  font-size: 16px;
+
+  /* prevent mobile safari from zooming in on double click */
+  touch-action: manipulation;
+}
+
+/* #endregion */
+
 :root {
   color-scheme: light dark;
 }
@@ -31,29 +61,9 @@
   touch-action: manipulation;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 html {
-  min-height: 100%;
-  box-sizing: border-box;
-
   color: var(--text-color);
   background-color: var(--background-color);
-}
-
-body {
-  min-height: 100vh;
-
-  margin: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow-y: auto;
 }
 
 h1,
