@@ -43,8 +43,16 @@
       name: 'ActivElite',
       type: 'Admin dashboard',
       company: 'ActivBody',
-      heroSrc: '01_login.png',
-      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
+      heroSrc: '/activelite/04_exercise_report.png',
+      gallerySources: [
+        '/activelite/01_select_organization.png',
+        '/activelite/02_latest_activities.png',
+        '/activelite/03_athletes.png',
+        '/activelite/05_strength_over_time.png',
+        '/activelite/06_strength_over_time_export.png',
+        '/activelite/07_mobile_strength_over_time.png',
+        '/activelite/08_mobile_navbar.png'
+      ]
     },
     {
       name: 'Account Management',
