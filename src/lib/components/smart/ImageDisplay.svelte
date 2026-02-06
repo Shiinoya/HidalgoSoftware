@@ -25,7 +25,7 @@ Displays an image that expands on click, with a close button overlay.
 
 <div class="image-display">
   <button class="thumbnail-button" type="button" onclick={openImage} style={`width: ${width};`}>
-    <img src={src} alt={alt} />
+    <img {src} {alt} />
   </button>
 
   {#if isOpen}
@@ -33,7 +33,7 @@ Displays an image that expands on click, with a close button overlay.
       <button class="close-button" type="button" onclick={closeImage} aria-label="Close image">
         <span class="material-symbols-outlined">close</span>
       </button>
-      <img class="expanded-image" src={src} alt={alt} />
+      <img class="expanded-image" {src} {alt} />
     </div>
   {/if}
 </div>
@@ -65,7 +65,7 @@ Displays an image that expands on click, with a close button overlay.
       align-items: center;
       justify-content: center;
 
-      background-color: rgba(90, 90, 90, 0.85);
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
     img.expanded-image {
