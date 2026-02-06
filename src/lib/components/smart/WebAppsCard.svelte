@@ -1,27 +1,35 @@
 <script lang="ts">
-  import ImageDisplay from './ImageDisplay.svelte';
+  import HeroGalleryDisplay from './Hero&GalleryDisplay.svelte';
 
   type WebApp = {
     name: string;
     type: string;
     company: string;
+    heroSrc: string;
+    gallerySources: string[];
   };
 
   const webApps: WebApp[] = [
     {
       name: 'ActivForce',
       type: 'Dashboard',
-      company: 'ActivBody'
+      company: 'ActivBody',
+      heroSrc: '01_login.png',
+      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'ActivElite',
       type: 'Dashboard',
-      company: 'ActivBody'
+      company: 'ActivBody',
+      heroSrc: '01_login.png',
+      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'Account Management',
       type: 'UI Portal',
-      company: 'ActivBody'
+      company: 'ActivBody',
+      heroSrc: '01_login.png',
+      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     }
   ];
 </script>
@@ -39,12 +47,10 @@ feature_description
 <div class="web-apps-card-wrapper">
   <h2>Web Applications</h2>
 
-  <!-- // TODO : create grid for layout to include images -->
-
   {#each webApps as webApp}
     <div class="application">
-      <div class="image">
-        <ImageDisplay src="/01_login.png" />
+      <div>
+        <HeroGalleryDisplay heroSrc={webApp.heroSrc} gallerySources={webApp.gallerySources} />
       </div>
 
       <ul>
