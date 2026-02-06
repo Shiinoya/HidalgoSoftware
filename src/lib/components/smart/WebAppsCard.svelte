@@ -3,7 +3,7 @@
 
   type WebApp = {
     name: string;
-    type: string;
+    description: string;
     company: string;
     heroSrc: string;
     gallerySources: string[];
@@ -12,22 +12,22 @@
   const webApps: WebApp[] = [
     {
       name: 'Stargazer Admin',
-      type: 'Admin dDashboard',
       company: 'Sedona Stargazing',
+      description: 'Admin Dashboard',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'Stargazing Tour',
-      type: 'Booking calendar & checkout',
       company: 'Sedona Stargazing',
+      description: 'Booking calendar & checkout',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'ActivForce',
-      type: 'Admin dashboard',
       company: 'ActivBody',
+      description: 'Admin dashboard',
       heroSrc: '/activforce/02_09_report_v02_chart.png',
       gallerySources: [
         '/activforce/01_05_table_v02.png',
@@ -41,8 +41,8 @@
     },
     {
       name: 'ActivElite',
-      type: 'Admin dashboard',
       company: 'ActivBody',
+      description: 'Admin dashboard',
       heroSrc: '/activelite/04_exercise_report.png',
       gallerySources: [
         '/activelite/01_select_organization.png',
@@ -56,8 +56,8 @@
     },
     {
       name: 'Account Management',
-      type: 'User account management portal',
       company: 'ActivBody',
+      description: 'User account management portal',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     }
@@ -84,9 +84,10 @@ feature_description
       </div>
 
       <ul>
-        <li>Name: {webApp.name}</li>
-        <li>Type: {webApp.type}</li>
+        <li>{webApp.name}</li>
         <li>Company: {webApp.company}</li>
+        <br />
+        <li>{webApp.description}</li>
         <br />
         <br />
       </ul>
