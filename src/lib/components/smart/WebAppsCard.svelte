@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ImageDisplay from './ImageDisplay.svelte';
+
   type WebApp = {
     name: string;
     type: string;
@@ -38,15 +40,22 @@ feature_description
   <h2>Web Applications</h2>
 
   <!-- // TODO : create grid for layout to include images -->
-  <ul>
-    {#each webApps as webApp}
-      <li>Name: {webApp.name}</li>
-      <li>Type: {webApp.type}</li>
-      <li>Company: {webApp.company}</li>
-      <br />
-      <br />
-    {/each}
-  </ul>
+
+  {#each webApps as webApp}
+    <div class="application">
+      <div class="image">
+        <ImageDisplay src="/01_login.png" />
+      </div>
+
+      <ul>
+        <li>Name: {webApp.name}</li>
+        <li>Type: {webApp.type}</li>
+        <li>Company: {webApp.company}</li>
+        <br />
+        <br />
+      </ul>
+    </div>
+  {/each}
 </div>
 
 <style lang="scss">
@@ -55,16 +64,23 @@ feature_description
     flex-direction: column;
     align-items: center;
 
-    ul {
-      padding: 0;
-      font-size: 1.1rem;
-      font-weight: bold;
+    div.application {
+      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
 
-      li {
-        padding: 0.5em;
-        list-style: none;
+      ul {
+        padding: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
 
-        text-align: left;
+        li {
+          padding: 0.5em;
+          list-style: none;
+
+          text-align: left;
+        }
       }
     }
   }
