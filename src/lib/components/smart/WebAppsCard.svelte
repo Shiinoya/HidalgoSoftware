@@ -28,8 +28,16 @@
       name: 'ActivForce',
       type: 'Admin dashboard',
       company: 'ActivBody',
-      heroSrc: '01_login.png',
-      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
+      heroSrc: '/activforce/02_09_report_v02_chart.png',
+      gallerySources: [
+        '/activforce/01_05_table_v02.png',
+        '/activforce/02_09_report_v02_chart.png',
+        '/activforce/03_10_report_v02_illustration.png',
+        '/activforce/04_15_report_v02_single_mobile.png',
+        '/activforce/05_16_report_v02_double_mobile.png',
+        '/activforce/06_13_report_v02_print.png',
+        '/activforce/07_08_locale_japanese.png'
+      ]
     },
     {
       name: 'ActivElite',
