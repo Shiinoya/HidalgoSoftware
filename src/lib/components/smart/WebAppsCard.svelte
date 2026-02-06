@@ -11,22 +11,36 @@
 
   const webApps: WebApp[] = [
     {
+      name: 'Stargazer Admin',
+      type: 'Admin dDashboard',
+      company: 'Sedona Stargazing',
+      heroSrc: '01_login.png',
+      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
+    },
+    {
+      name: 'Stargazing Tour',
+      type: 'Booking calendar & checkout',
+      company: 'Sedona Stargazing',
+      heroSrc: '01_login.png',
+      gallerySources: Array.from({ length: 12 }, () => '01_login.png')
+    },
+    {
       name: 'ActivForce',
-      type: 'Dashboard',
+      type: 'Admin dashboard',
       company: 'ActivBody',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'ActivElite',
-      type: 'Dashboard',
+      type: 'Admin dashboard',
       company: 'ActivBody',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')
     },
     {
       name: 'Account Management',
-      type: 'UI Portal',
+      type: 'User account management portal',
       company: 'ActivBody',
       heroSrc: '01_login.png',
       gallerySources: Array.from({ length: 12 }, () => '01_login.png')

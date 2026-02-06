@@ -32,7 +32,7 @@ Shows a hero image with a button and a grid gallery beneath.
 <div class="hero-gallery-wrapper">
   <div class="hero">
     <ImageDisplay src={heroSrc} alt="Hero image" width="100%" />
-    <button class="view-more-button" type="button" onclick={openGallery}>View More</button>
+    <button class="view-more-button" type="button" onclick={openGallery}>View Gallery</button>
   </div>
 
   {#if isOpen}
