@@ -16,6 +16,18 @@
   const closeGallery = () => {
     isOpen = false;
   };
+
+  $effect(() => {
+    if (typeof document === 'undefined') return;
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  });
 </script>
 
 <!--
