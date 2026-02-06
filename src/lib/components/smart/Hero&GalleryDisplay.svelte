@@ -42,7 +42,12 @@ Shows a hero image with a button and a grid gallery beneath.
       </button>
       <div class="gallery-grid">
         {#each gallerySources as gallerySrc, index}
-          <ImageDisplay src={gallerySrc} alt={`Gallery image ${index + 1}`} width="100%" />
+          <ImageDisplay
+            src={gallerySrc}
+            alt={`Gallery image ${index + 1}`}
+            width="100%"
+            height="300px"
+          />
         {/each}
       </div>
     </div>
@@ -79,12 +84,14 @@ Shows a hero image with a button and a grid gallery beneath.
 
   div.gallery-grid {
     width: min(90vw, 1400px);
+    max-height: 85vh;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
     padding: 1.5rem;
     background-color: #000;
     border-radius: 16px;
+    overflow: auto;
   }
 
   @media (max-width: 600px) {

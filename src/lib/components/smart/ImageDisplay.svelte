@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { src, alt = 'Image', width = '420px' } = $props();
+  let { src, alt = 'Image', width = '420px', height = 'auto' } = $props();
   let isOpen = $state(false);
 
   const openImage = () => {
@@ -20,12 +20,13 @@ Displays an image that expands on click, with a close button overlay.
 ### Props
 - `src` (string): Source URL for the image.
 - `alt` (string): Alt text for the image.
-- `width` (string): Thumbnail width (e.g. `420px`, `60%`).
+- `width` (string): Thumbnail max width (e.g. `420px`, `60%`).
+- `height` (string): Thumbnail height (e.g. `180px`, `clamp(140px, 18vw, 220px)`).
 -->
 
 <div class="image-display">
-  <button class="thumbnail-button" type="button" onclick={openImage} style={`width: ${width};`}>
-    <img {src} {alt} />
+  <button class="thumbnail-button" type="button" onclick={openImage} style={`max-width: ${width};`}>
+    <img {src} {alt} style={`height: ${height};`} />
   </button>
 
   {#if isOpen}
@@ -43,6 +44,7 @@ Displays an image that expands on click, with a close button overlay.
     display: inline-block;
 
     button.thumbnail-button {
+      width: 100%;
       padding: 0;
       border: none;
       background: none;
@@ -51,9 +53,10 @@ Displays an image that expands on click, with a close button overlay.
 
     button.thumbnail-button img {
       display: block;
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border-radius: 8px;
+      object-fit: cover;
     }
 
     div.overlay {
